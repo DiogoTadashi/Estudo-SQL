@@ -181,3 +181,19 @@ DEFAULT - força um valor padrão quando nenhum valor é passado
 CREATE TABLE nome_tabela(
     nomeColuna TipoDeDados PRIMARY KEY
 )
+
+--ALTER
+Add, Remover, or alterar uma coluna
+Setar valores padrões para uma coluna
+Add ou Remover restrições de colunas
+Renomear uma tabela
+
+--DROP TABLE apaga a tabela toda
+
+--TRUNCATE apaga só as coisas de dentro
+
+-- NOT NULL
+
+--UNIQUE
+
+--VIEW Tabelas virtuais para simplificar consultas complexas.
