@@ -1,0 +1,6 @@
+A equipe de marketing precisa realizar uma pesquisa para identificar os nomes mais comuns entre seus clientes.
+Para isso, é necessário obter nome e sobrenome de todos os clientes cadastrados no sistema.
+
+//RESOLUÇÂO
+SELECT FirstName, MiddleName, LastName
+FROM person.Person;

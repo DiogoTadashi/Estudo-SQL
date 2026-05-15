@@ -1,0 +1,6 @@
+Quero saber quantos tamanhos de produtos temos cadastrados na tabela Production.Product.
+
+
+//RESOLUÇÂO
+SELECT COUNT(Size)
+FROM Production.product

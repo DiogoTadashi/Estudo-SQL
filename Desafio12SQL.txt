@@ -1,0 +1,28 @@
+1 - Saber quantas pessoas têm o mesmo MiddleName.
+
+//RESOLUÇÂO
+SELECT MIddleName, COUNT(MiddleName) AS "Quantidade"
+FROM Person.Person
+GROUP BY MiddleName
+
+2 - Saber em média qual a quantidade de cada produto vendido na loja.
+
+//RESOLUÇÂO
+SELECT ProductID, AVG(OrderQty) "Media"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+
+3 - Identificar quais foram as 10 ordens que, no total, tiveram os maiores valores de produtos (ordenado do maior para o menor)
+
+//RESOLUÇÂO
+SELECT TOP 10 ProductID, SUM(LineTotal) AS TotalVendas
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+ORDER BY SUM(LineTotal) desc
+
+4 -  Saber qual a quantidade média de produtos que são passados nas ordens de serviço, agrupadas pelo ProductID.
+
+//RESOLUÇÂO
+SELECT ProductID, COUNT(ProductID) as Quantidade , AVG (OrderQty) as Media
+FROM Production.WorkOrder
+GROUP BY ProductID

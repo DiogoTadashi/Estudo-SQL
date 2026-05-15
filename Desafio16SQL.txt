@@ -1,0 +1,18 @@
+Encontrar todos os endereços que estão no estado de Alberta utilizando subqueries.
+
+
+//RESOLUCAO
+
+SELECT AddressLine1
+FROM Person.Address
+WHERE StateProvinceID IN (
+SELECT StateProvinceID 
+FROM Person.StateProvince 
+WHERE name= 'Alberta')
+
+
+// FEITO COM JOIN
+SELECT PA.AddressLine1
+FROM Person.StateProvince SP
+JOIN Person.Address PA ON PA.StateProvinceID = SP.StateProvinceID
+WHERE SP.Name = 'Alberta'

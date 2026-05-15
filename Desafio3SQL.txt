@@ -1,0 +1,8 @@
+A equipe de produção de produtos precisa obter o nome de todas as peças que:
+pesam mais que 500 kg, mas não mais que 700 kg
+
+
+//RESOLUÇÂO
+SELECT name
+FROM Production.Product
+WHERE Weight > 500 and Weight <= 700

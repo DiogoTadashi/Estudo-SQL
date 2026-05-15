@@ -1,0 +1,16 @@
+DESAFIO INNER JOIN
+Trazer um resultado que inclua: BusinessEntityID, Name, PhoneNumberTypeID e PhoneNumber (utilizando joins entre tabelas).
+
+//RESOLUÇÂO
+SELECT pp.BusinessEntityID, pt.Name, pp.PhoneNumberTypeID ,pp.PhoneNumber
+FROM person.PhoneNumberType as pt
+JOIN person.PersonPhone AS pp ON pp.PhoneNumberTypeID = pt.PhoneNumberTypeID
+
+
+
+Trazer um resultado que inclua: AddressID, Name, StateProvinceID e City (utilizando joins entre tabelas).
+
+//RESOLUÇÂO
+SELECT ad.AddressID, ad.City, sp.StateProvinceID, sp.Name
+FROM person.StateProvince as sp
+JOIN person.Address AS ad ON sp.StateProvinceID = ad.StateProvinceID

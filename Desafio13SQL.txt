@@ -1,0 +1,17 @@
+1 -Identificar as províncias (StateProvinceID) com maior número de cadastros no sistema (mais de 1.000 vezes).
+
+//RESOLUÇÂO
+SELECT StateProvinceID, COUNT(StateProvinceID) AS Quantidade
+FROM Person.Address
+GROUP BY StateProvinceID
+HAVING COUNT(StateProvinceID) > 1000
+ORDER BY COUNT(StateProvinceID) DESC
+
+
+2 -  Identificar quais produtos não estão trazendo em média, no mínimo, 1 milhão em total de vendas.
+
+//RESOLUÇÂO
+SELECT ProductID, AVG(LineTotal)
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000

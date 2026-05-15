@@ -1,0 +1,6 @@
+Obter o nome e numero do produt odos produtos que tem o ProductID entre 1~4
+
+//RESOLUÇÂO
+SELECT TOP 4 name, ProductNumber
+FROM Production.Product
+ORDER BY ProductID asc

@@ -1,0 +1,19 @@
+Um usuário chamado Peter Krebs está devendo um pagamento.
+Precisamos conseguir o email dele para que seja possível enviar uma cobrança.
+
+//RESOLUÇÂO
+SELECT FirstName, LastName,BusinessEntityID
+FROM Person.Person
+WHERE FirstName = 'Peter' and LastName = 'Krebs'
+
+SELECT EmailAddress
+FROM Person.EmailAddress
+WHERE BusinessEntityID = '26'
+
+
+// Maneira mais avançada
+SELECT FirstName, LastName, EmailAddress
+FROM Person.Person AS p
+JOIN Person.EmailAddress AS e
+    ON p.BusinessEntityID = e.BusinessEntityID
+WHERE FirstName = 'Peter' and LastName = 'Krebs'

@@ -1,0 +1,183 @@
+SELECT
+-- SQL Server, Postgres, Oracle, mySql
+
+SELECT coluna1, coluna2
+FROM tabela
+
+SELECT *
+FROM tabela
+
+SELECT *
+FROM person.Person;
+
+SELECT Title
+FROM person.Person;
+
+SELECT *
+FROM person.EmailAddress
+
+SELECT FirstName, MiddleName, LastName
+FROM person.Person;
+
+--DISTINCT
+
+SELECT DISTINCT FirstName
+FROM person.Person;
+
+SELECT DISTINCT LastName
+FROM person.Person;
+
+--WHERE
+
+SELECT coluna1, coluna2, coluna_n
+FROM tabela
+WHERE condicao
+/*
+Operador	Descrição
+   =	     Igual
+   >		 Maior que
+   <   	     Menor que
+  >=	     Maior que ou igual
+  <=	     Menor que ou igual
+  <>	     Diferente de
+  AND		 Operador lógico E
+  OR		 Operador lógico OU
+*/
+
+SELECT *
+FROM person.Person
+WHERE LastName = 'miller';
+
+SELECT *
+FROM person.Person
+WHERE LastName = 'miller' and FirstName = 'anna'
+
+SELECT *
+FROM Production.Product
+WHERE (color = 'blue' or Color = 'black') and ListPrice > 1500
+
+SELECT *
+FROM Production.Product
+WHERE color <> 'blue'  (Diferente de Azul)
+
+
+--COUNT
+SELECT COUNT(*, DISTINCT coluna1)
+FROM tabela
+
+
+--TOP
+SELECT TOP 10 *
+FROM tabela
+
+
+-- ORDER By
+SELECT coluna1, coluna2
+FROM tabela
+ORDER BY coluna1 asc/desc
+
+
+--Between
+O BETWEEN entre min AND max
+
+SELECT name, ProductNumber
+FROM Production.Product
+WHERE ProductID BETWEEN 1 and 4
+
+SELECT name, ProductNumber
+FROM Production.Product
+WHERE ProductID NOT BETWEEN 1 and 4
+
+
+--IN
+Nós usamos o operador IN junto com o WHERE,
+para verificar se um valor correspondem com qualquer valor passado na lista de valores.
+
+SELECT *
+FROM Production.Product
+WHERE color IN ('blue', 'black')
+
+SELECT *
+FROM Person.Person
+WHERE BusinessEntityID IN (2,7,13)
+
+--LIKE
+SELECT *
+FROM Person.Person
+WHERE FirstName like 'ovi%'     //% quer dizer q n importa oq vem dps ou antes se for usado assim %to ou %essa%
+
+
+-- MIN MAX SUM AVG
+
+--GROUP BY
+divide o resultado da pesquisa em gps
+
+SELECT coluna1, funcaoAgregacao(coluna2)
+FROM nomeTabela
+GROUP BY coluna1
+
+--HAVING
+filtra no GROUP BY
+
+SELECT coluna1, funcaoAgregacao(coluna2)
+FROM nomeTabela
+GROUP BY coluna1
+HAVING condicao
+
+-- AS
+
+-- INNER JOIN
+INNER JOIN coloca 
+
+-- OUTER JOIN
+
+-- LEFT OUTER JOIN = LEFT JOIN
+
+--UNION
+JUNTAR 2 SELECTS
+SELECT coluna1, coluna2
+FROM tabela
+UNION
+SELECT coluna1, coluna2
+FROM tabela2
+
+-- SELF JOIN
+
+--DATEPART
+
+-- String Operation
+Concat (FirstName, ' ', LastName')
+LOWER, UPPER
+LEN (LENGHT)
+SUBSTRING(FirstName, 1, 3)
+REPLACE(coluna, '-', '#') substitui o - pelo #
+
+-- Math Functions
+o de sempre
+
+--Tipos de dados
+1 - booleano
+2 - caracteres // char
+3 - num https://prnt.sc/yy6aWeRlIy7k
+4 - temporais time etc
+
+--Chave primaria
+id normalmente 
+CREATE TABLE nome_tabela(
+    nomeColuna TipoDeDados PRIMARY KEY
+)
+Constrains
+
+--chave estrangeira
+
+-- CREATE TABLE 
+NOT NULL - Não permite nulos
+UNIQUE - Força que todos os valores em uma coluna sejam diferentes
+PRIMARY KEY - uma junção de NOT NULL e UNIQUE
+FOREIGN KEY - identifica unicamente uma linha em outra tabela
+CHECK - FORÇA uma condição específica em uma coluna
+DEFAULT - força um valor padrão quando nenhum valor é passado
+
+CREATE TABLE nome_tabela(
+    nomeColuna TipoDeDados PRIMARY KEY
+)

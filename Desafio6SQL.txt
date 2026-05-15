@@ -1,0 +1,6 @@
+Quero saber quantos produtos temos cadastrados na tabela Production.Product.
+
+
+//RESOLUÇÂO
+SELECT COUNT(DISTINCT ProductID)
+FROM Production.product

@@ -1,0 +1,17 @@
+Desafios do AS
+1 - Renomear as colunas FirstName e LastName para "Nome" e "Sobrenome".
+
+//RESOLUÇÂO
+SELECT FirstName AS "Primeiro Nome", LastName AS "Sobrenome"
+FROM Person.Person
+
+2 - Renomear a coluna ProductNumber para "Número do produto" e Name para "Nome do produto".
+
+//RESOLUÇÂO
+SELECT ProductNumber AS "Número do produto", Name AS "Nome do produto"
+FROM Production.Product
+
+3 - Renomear a coluna UnitPrice na tabela Sales.SalesOrderDetail para "Preço unitário".
+//RESOLUÇÂO
+SELECT UnitPrice AS "Preço unitário"
+FROM Sales.SalesOrderDetail
